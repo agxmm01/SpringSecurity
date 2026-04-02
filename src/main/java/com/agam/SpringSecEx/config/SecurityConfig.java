@@ -31,7 +31,7 @@ public class SecurityConfig {
     private final MyUserDetailService userDetailService;
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) {
-       return http.csrf(customizer -> customizer.disable())
+       return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/login","/register").permitAll().anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
