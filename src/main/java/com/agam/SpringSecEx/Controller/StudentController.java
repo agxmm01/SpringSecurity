@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class StudentController {
     List<Student> students = List.of(
-            new Student(1,"Agam",89),
+            new Student(1,"Agampal",89),
             new Student(2, "Harleen", 92)
     );
 
